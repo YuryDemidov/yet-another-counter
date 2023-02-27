@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.2em;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-size: 2.5em;
+  font-family: monospace;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nonHoverableLogoPart {
+  position: absolute;
+  top: 1em;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.logoPart {
+  position: relative;
+}
+
+.logoPart:first-of-type:first-letter {
+  color: red;
+}
+
+.logoPart:nth-of-type(2):first-letter {
+  color: green;
+}
+
+.logoPart:nth-of-type(3):first-letter {
+  color: blue;
+}
+
+.logoPart::before {
+  content: '';
+  position: absolute;
+  top: 1em;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transition: transform 2s;
+  pointer-events: none;
+}
+
+.logoPart:hover::before {
+  transform: translateY(100%);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 70vw;
+  text-align: center;
+}
+
+.contentTitle {
+  margin: 0;
+}
+
+.wrongValue {
+  text-decoration: line-through;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.actionButton {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.stepInput {
+  max-width: 4em;
 }
