@@ -40,10 +40,10 @@ const App: React.FC = () => {
   return (
       <main className="app">
         <h1 className="logo">
-          <span className="nonHoverableLogoPart"/>
           <div className="logoPart">YET</div>
           <div className="logoPart">ANOTHER</div>
           <div className="logoPart">COUNTER</div>
+          <div className="nonHoverableLogoPart"/>
         </h1>
         <div className="content">
           <h2 className="contentTitle">
